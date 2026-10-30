@@ -1,0 +1,35 @@
+
+name: My First GitHub Actions
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Welcome Message
+        run: echo "Welcome Aswin to GitHub Actions"
+
+      - name: Display Date and Time
+        run: date
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Display Working Directory
+        run: pwd
+
+      - name: List Files
+        run: ls -la
+
+      - name: Read App File
+        run: cat app.txt
+
+      - name: Completion Message
+        run: echo "Workflow completed successfully"
+
